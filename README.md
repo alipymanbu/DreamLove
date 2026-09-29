@@ -1,95 +1,25 @@
-# 💌 DreamLove (Dating Simulation AI)
+# dreamlove
 
-**Solar API**를 활용한 연애 시뮬레이션 AI 챗봇 백엔드 서비스입니다. 사용자의 연애 고민을 분석하여 가상의 데이트 상대와 대화하며 연애 능력을 진단하고 피드백을 제공합니다.
+本仓库是「dreamlove」的安卓版本获取入口，附使用资料索引。
 
-## ✨ 주요 기능
+## 安装文件资源（夸克网盘）
 
-*   **💘 연애 시뮬레이션**: 사용자의 성별, 고민, 이상형(다정한/시크한)을 반영한 1:1 롤플레잉
-*   **🧩 상황 자동 분석**: 사용자의 고민 텍스트에서 '데이트 장소'와 '상대와의 관계'를 자동 추출
-*   **📊 실시간 평가 시스템**: 사용자의 답변을 AI가 분석하여 점수 부여 (+10, +5, -5, -10)
-*   **📝 맞춤형 피드백**: 대화 종료 후 점수와 대화 내용을 바탕으로 구체적인 조언 제공
-*   **🔄 6단계 대화 흐름**: 인사(Stage 0)부터 최종 평가(Stage 6)까지 체계적인 시나리오 진행
+> **dreamlove 安装文件资源（夸克网盘）**：[https://pan.quark.cn/s/b494cd17407d](https://pan.quark.cn/s/b494cd17407d)
 
-## 🛠 기술 스택
+## 官方项目
 
-*   **Language**: Python 3.10+
-*   **Framework**: FastAPI
-*   **AI Model**: Solar API (Large Language Model)
-*   **Libraries**: Uvicorn, Pydantic, Httpx
+- 上游项目：[AndyKim06/DreamLove](https://github.com/AndyKim06/DreamLove)
 
-## 🚀 설치 및 실행
+## 更多资料
 
-### 1. 가상환경 설정 및 활성화 (필수)
-프로젝트의 의존성 라이브러리를 격리된 환경에서 관리하기 위해 가상환경을 사용합니다.
+- [下载与安装教程](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/dreamlove/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.md)
+- [常见问题排查](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/dreamlove/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5.md)
+- [梦元获取与消耗](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/dreamlove/%E6%A2%A6%E5%85%83%E8%8E%B7%E5%8F%96%E4%B8%8E%E6%B6%88%E8%80%97.md)
+- [注册登录与个人信息设置](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/dreamlove/%E6%B3%A8%E5%86%8C%E7%99%BB%E5%BD%95%E4%B8%8E%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E8%AE%BE%E7%BD%AE.md)
+- [角色创建与聊天玩法](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/dreamlove/%E8%A7%92%E8%89%B2%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%81%8A%E5%A4%A9%E7%8E%A9%E6%B3%95.md)
+- [记忆功能与角色故事](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/dreamlove/%E8%AE%B0%E5%BF%86%E5%8A%9F%E8%83%BD%E4%B8%8E%E8%A7%92%E8%89%B2%E6%95%85%E4%BA%8B.md)
+- [全部软件目录](https://github.com/alipymanbu/Android/blob/master/%E5%85%A8%E9%83%A8%E8%BD%AF%E4%BB%B6%E7%9B%AE%E5%BD%95.md)
 
-**Windows (PowerShell)**
-```powershell
-# 가상환경 생성 (최초 1회)
-python -m venv venv
+---
 
-# 가상환경 활성화
-.\venv\Scripts\activate
-```
-
-**Linux / macOS / WSL2**
-```bash
-# 가상환경 생성 (최초 1회)
-python3 -m venv venv
-
-# 가상환경 활성화
-source venv/bin/activate
-```
-
-### 2. 환경 변수 설정
-1. `env.example` 파일을 복사하여 `.env` 파일을 생성합니다.
-   ```bash
-   # Windows
-   copy env.example .env
-
-   # Mac / Linux
-   cp env.example .env
-   ```
-2. 발급받은 Solar API 키를 `.env` 파일에 입력합니다.
-```env
-SOLAR_API_KEY=your_solar_api_key_here
-```
-
-### 3. 패키지 설치
-```bash
-pip install -r requirements.txt
-```
-
-### 4. 서버 실행 
-먼저 백엔드 서버를 실행해야 합니다. 
-```bash
-python -m uvicorn app.main:app --reload
-```
-`Application startup complete.` 메시지가 뜨면 실행 성공입니다.
-
-### 5. 서비스 테스트 (CLI)
-터미널에서 직접 대화해보며 서비스를 테스트할 수 있습니다.
-**새 터미널**을 열고(서버 실행 중인 터미널 유지), 가상환경을 활성화한 뒤 실행하세요.
-```bash
-python interactive_cli.py
-```
-
-### 6. API 문서 확인 (Swagger UI)
-서버가 실행 중일 때 브라우저에서 아래 주소로 접속하면 API 문서를 볼 수 있습니다.
-- [http://localhost:8000/docs](http://localhost:8000/docs)
-
-## 📂 프로젝트 구조
-
-```
-DreamLove/
-├── app/
-│   ├── core/       # 설정 (config.py)
-│   ├── models/     # 데이터 모델 (schemas.py)
-│   ├── routers/    # API 라우터 (chat.py)
-│   ├── services/   # 비즈니스 로직
-│   │   ├── chat_flow.py      # 대화 흐름 및 평가
-│   │   ├── concern_parser.py # 고민 분석
-│   │   └── solar_client.py   # Solar API 통신
-│   └── main.py     # 앱 진입점
-├── interactive_cli.py # CLI 테스트 도구
-└── requirements.txt
-```
+> 本仓库由上游项目 fork 而来，原始说明见[上游仓库](https://github.com/AndyKim06/DreamLove)。
